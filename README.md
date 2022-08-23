@@ -1,18 +1,6 @@
-# Synchronize multiple R5560 / R5560SE to for simultaneous sampling on multiple device 
+# R5560/SE DAQs horizontal interconnection 
 
-Thisexample explains how to synchronize multiple R5560/R5560SE to extend the number of input channels sampled simultaneously.
-This document covers the following task:
-• How to distribute a common clock
-• How to synchronize the acquisition between multiple DAQ and device
-• How to distribute common trigger signal
-To synchronize multiple device it is mandatory to have a DAQ and BASE operational system newer than 2022.7.0.1. Check on the display and on the web page of the DAQ and of the BASE of the R5560.
-
-# Obtaining 16k samples per channel on 32 channels on R5560A
-In the example we use the Oscilloscope Dual and we configured SciCompiler to use the board profile Z-7030-MINIMAL. In this configuration the optical link, the DMA and the horizontal link are disable in order to free all the available memory on the FPGA. This allows to extend the maximum memory depth from 8k to 16k per channel
-
-# Documentation
-
-Read documentation in Doc folder
-
-# Compile FPGA
-In order to compiler the scf file for R5560A, download and install SciCompiler 2022.7.0.4 or newer. http://www.scicompiler.cloud
+This document explains how to use the FLAG signals and fast horizontal link between DAQ.
+Each DAQ is directly connected to the DAQ on the right and on the left with two kind of link:
+•	FLAG links: two links per side (right/left), one in the direction left to right (left out, right in) the other in the opposite direction right to left (left out, right in). Flag has no propagation delay and can be used as trigger/busy/timestamp purpose
+•	H-LINK: two link per side (right/left), one in the direction left to right (left out, right in) the other in the opposite direction right to left (left out, right in). H-LINK is 64 bit wide and can be used to transport information between two DAQ. H-LINK has a latency of about 300ns and the latency is not deterministic.
