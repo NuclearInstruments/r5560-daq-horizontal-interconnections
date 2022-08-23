@@ -1,0 +1,36 @@
+{
+  "Device": "R5560",
+  "Registers": [
+    {
+      "Name": "R_RX",
+      "Address": 0,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "R_TX",
+      "Address": 1,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "L_RX",
+      "Address": 2,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    },
+    {
+      "Name": "L_TX",
+      "Address": 3,
+      "RegionSize": 1,
+      "Description": "",
+      "Category": "Undefined"
+    }
+  ],
+  "Version": 0.0,
+  "GenerationData": "0001-01-01T00:00:00",
+  "MMCComponents": []
+}
